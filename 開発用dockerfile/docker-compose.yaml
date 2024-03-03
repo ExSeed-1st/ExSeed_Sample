@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - ./:/root/app
+    env_file:
+      - ./.env.dev
+    ports:
+      - 7860:7860
+    restart: always
